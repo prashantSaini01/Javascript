@@ -9,3 +9,6 @@ console.log(null >=0)
 console.log(undefined ==0)
 console.log(undefined >0)
 console.log(undefined>=0)
+
+
+// Strict Check === Also check datatype
