@@ -58,3 +58,31 @@ console.log(Object.values(tinderUser)) // Gives all the values
 console.log(Object.entries(tinderUser)) //  Gives all the keys and values
 
 console.log(tinderUser.hasOwnProperty('isLoggedIn')) // Check they have these property or not.
+
+
+
+
+const course ={
+    courseName : "JS",
+    price: "999",
+    courseInstructor:"Prashant Saini"
+}
+
+// console.log(course.courseInstructor)
+
+// Destructing Objects --> basically helps to annoy use course.courseInstructor
+
+// const {courseInstructor} = course
+
+// console.log(courseInstructor)
+
+const {courseInstructor: Instructor} = course
+
+console.log(Instructor)
+
+//  Difference between Object and Json is that the keys in Json is string
+
+// {
+//     "name": "Prashant Saini",
+//     "age": 25
+// }
