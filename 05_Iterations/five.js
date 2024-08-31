@@ -35,6 +35,8 @@ const myCoding =[
     }
 ]
 
+// For each loop on Objects
+
 myCoding.forEach((item)=>{
     console.log(item.langauageName,item.languageSign)
 

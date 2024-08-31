@@ -21,10 +21,11 @@ console.log(newNum)
 
 // Bina filter ka same kaam kese karta
 
-const newNums = []
-myNumbers.forEach((num)=>{
-    if(num>5)
-        newNums.push(num)
-})
+// const newNums = []
+// myNumbers.forEach((num)=>{
+//     if(num>5)
+//         newNums.push(num)
+// })
 
-console.log(newNums)
+// console.log(newNums)
+

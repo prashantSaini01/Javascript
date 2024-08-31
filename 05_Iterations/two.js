@@ -22,3 +22,5 @@ do{
     console.log(`Score is ${score}`)
     score+=2
 }while(score<25);
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Last Lecture of DOM</title>
+</head>
+<body style="background-color: aqua; color: red;" >
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    // function addLanguage(langName){
+    //     const li = document.createElement('li')
+    //     li.innerHTML=`${langName}`
+    //     document.querySelector('.language').appendChild(li)
+    // }
+    // addLanguage("Python")
+    // addLanguage("TypeScript")
+
+    // Optimization Issue aata h because Sara tree traverse karna padh raha hai
+    function addOptimLang(langNmae){
+        const li = document.createElement('li')
+        li.append(document.createTextNode(langNmae))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptimLang("TypeScript")
+
+    // Edit methods
+
+    
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // 1) Method
+    // secondLang.innerHTML="Mojo"
+
+    // 2) Method
+    // const new_element = document.createElement('li')
+    // new_element.textContent ="Ruby"
+    // secondLang.replaceWith(new_element)
+
+    // 3) Method
+    // const  new_el = document.createElement('li')
+    // new_el.append(document.createTextNode("GO"))
+    // secondLang.replaceWith(new_el)
+    
+    // // 4) Method
+    // const firstLang = document.querySelector("li:first-child")
+    // firstLang.outerHTML ="<li>TypeScript</li>"
+
+    // Remove Method
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove()
+</script>
+</html>
