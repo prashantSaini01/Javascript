@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick=function(){
+    //     alert("owl clicked")
+    // }
+
+    //Other methods
+     // attachEvent()
+    // jQuery - onevent
+
+//     document.getElementById("owl").addEventListener('click',function(){
+//         alert("owl clicked")
+//     },false)  // False by default
+    
+//     // type,timestamp,defaultPrevented
+//     // target, toElement, srcElement , currentTarget
+//     // clientX, clientY, screenX , screenY
+//     // altkey , ctrkey, shiftkey, keycode
+
+// //     These are various properties commonly used in JavaScript, especially in the context of event handling. I'll break down each one:
+
+// // ### 1. `type`, `timestamp`, `defaultPrevented`
+// // - **`type`**: This property returns the type of the event (e.g., `"click"`, `"keydown"`, `"mouseover"`). It helps identify what kind of event was triggered.
+  
+// //   ```javascript
+// //   document.addEventListener('click', function(event) {
+// //       console.log(event.type); // Output: 'click'
+// //   });
+// //   ```
+
+// // - **`timestamp`**: This property returns the time (in milliseconds) when the event was created. It is useful for measuring the time between events.
+
+// //   ```javascript
+// //   document.addEventListener('click', function(event) {
+// //       console.log(event.timeStamp); // Output: Time in milliseconds
+// //   });
+// //   ```
+
+// // - **`defaultPrevented`**: This boolean property returns `true` if `event.preventDefault()` was called on the event, indicating that the event's default action has been prevented.
+
+// //   ```javascript
+// //   document.addEventListener('click', function(event) {
+// //       event.preventDefault(); // Prevents the default action
+// //       console.log(event.defaultPrevented); // Output: true
+// //   });
+// //   ```
+
+// // ### 2. `target`, `toElement`, `srcElement`, `currentTarget`
+// // - **`target`**: This property refers to the element that triggered the event. It is the actual element where the event occurred.
+
+// //   ```javascript
+// //   document.addEventListener('click', function(event) {
+// //       console.log(event.target); // Output: The element that was clicked
+// //   });
+// //   ```
+
+// // - **`toElement`**: In mouse events, this property refers to the element the pointer is moving to when the event is fired. It is commonly used in `mouseover` and `mouseout` events.
+
+// //   ```javascript
+// //   element.addEventListener('mouseout', function(event) {
+// //       console.log(event.toElement); // Output: The element the pointer is moving to
+// //   });
+// //   ```
+
+// // - **`srcElement`**: This is an alias for `target`, but it's specific to older versions of Internet Explorer. In modern browsers, it's recommended to use `target` instead.
+
+// //   ```javascript
+// //   document.addEventListener('click', function(event) {
+// //       console.log(event.srcElement); // Output: The element that was clicked (IE only)
+// //   });
+// //   ```
+
+// // - **`currentTarget`**: This property refers to the element to which the event handler is attached. Unlike `target`, which refers to the element that triggered the event, `currentTarget` refers to the element that is currently handling the event.
+
+// //   ```javascript
+// //   document.addEventListener('click', function(event) {
+// //       console.log(event.currentTarget); // Output: The element with the event listener
+// //   });
+// //   ```
+
+// // ### 3. `clientX`, `clientY`, `screenX`, `screenY`
+// // - **`clientX`**: This property returns the horizontal coordinate (X) of the mouse pointer, relative to the viewport (the area of the window in which the web page is displayed).
+
+// //   ```javascript
+// //   document.addEventListener('click', function(event) {
+// //       console.log(event.clientX); // Output: X coordinate relative to the viewport
+// //   });
+// //   ```
+
+// // - **`clientY`**: This property returns the vertical coordinate (Y) of the mouse pointer, relative to the viewport.
+
+// //   ```javascript
+// //   document.addEventListener('click', function(event) {
+// //       console.log(event.clientY); // Output: Y coordinate relative to the viewport
+// //   });
+// //   ```
+
+// // - **`screenX`**: This property returns the horizontal coordinate (X) of the mouse pointer, relative to the entire screen.
+
+// //   ```javascript
+// //   document.addEventListener('click', function(event) {
+// //       console.log(event.screenX); // Output: X coordinate relative to the screen
+// //   });
+// //   ```
+
+// // - **`screenY`**: This property returns the vertical coordinate (Y) of the mouse pointer, relative to the entire screen.
+
+// //   ```javascript
+// //   document.addEventListener('click', function(event) {
+// //       console.log(event.screenY); // Output: Y coordinate relative to the screen
+// //   });
+// //   ```
+
+// // ### 4. `altKey`, `ctrlKey`, `shiftKey`, `keyCode`
+// // - **`altKey`**: This property returns `true` if the Alt key was pressed when the event was triggered, otherwise `false`.
+
+// //   ```javascript
+// //   document.addEventListener('click', function(event) {
+// //       console.log(event.altKey); // Output: true or false
+// //   });
+// //   ```
+
+// // - **`ctrlKey`**: This property returns `true` if the Control key was pressed when the event was triggered, otherwise `false`.
+
+// //   ```javascript
+// //   document.addEventListener('click', function(event) {
+// //       console.log(event.ctrlKey); // Output: true or false
+// //   });
+// //   ```
+
+// // - **`shiftKey`**: This property returns `true` if the Shift key was pressed when the event was triggered, otherwise `false`.
+
+// //   ```javascript
+// //   document.addEventListener('click', function(event) {
+// //       console.log(event.shiftKey); // Output: true or false
+// //   });
+// //   ```
+
+// // - **`keyCode`**: This property returns the numeric code of the key that was pressed. It is mostly used in keyboard events.
+
+// //   ```javascript
+// //   document.addEventListener('keydown', function(event) {
+// //       console.log(event.keyCode); // Output: Numeric code of the key pressed
+// //   });
+// //   ```
+
+// // Note that `keyCode` is deprecated and it is recommended to use `event.key` for modern applications.
+
+// // These properties are essential in handling and responding to different user interactions on a webpage.
+
+
+
+// // event Propogation 
+// // bubling chota sa badha owl->images
+// document.getElementById('images').addEventListener('click',function(e){
+//     console.log("click inside the ul")
+// },false)
+
+// document.getElementById('owl').addEventListener('click',function(e){
+//     console.log("owl clicked")
+// },false)
+// // Capturing bada sa chota images->owl
+// // document.getElementById('images').addEventListener('click',function(e){
+// //     console.log("click inside the ul")
+// // },true)
+
+// // document.getElementById('owl').addEventListener('click',function(e){
+// //     console.log("owl clicked")
+// // },true)
+
+
+// // Stop Propogarion we don't want bubbling effect so we use e.stopPropogation
+// document.getElementById('images').addEventListener('click',function(e){
+//     console.log("click inside the ul")
+// },false)
+
+// document.getElementById('owl').addEventListener('click',function(e){
+//     console.log("owl clicked")
+//     e.stopPropagation()
+// },false)
+
+// // prevent Default
+// document.getElementById('owl').addEventListener('click',function(e){
+//     console.log("owl clicked")
+//     e.preventDefault()
+// },false)
+
+
+
+// ******************** I click one by one images disappear
+
+
+document.querySelector('#images').addEventListener('click',function(e){
+    console.log(e.target)  // e.tragte wo img ha jis p mena click keya ha
+    if(e.target.tagName ==="IMG"){
+        let removeIt = e.target.parentNode
+
+removeIt.remove()
+
+    }
+  
+    // Another logic same task
+    // removeIt.parentNode.removeChild(removeIt)
+})
+
+</script>
+</html>
